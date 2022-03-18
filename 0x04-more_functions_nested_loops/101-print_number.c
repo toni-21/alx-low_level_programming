@@ -1,35 +1,38 @@
 #include "main.h"
-
 /**
-* print_number - prints # using _putchar function
-* @n: the integer to print
-*
-* Return: void
-*/
+ * print_number - prints a number
+ * @n: Input number
+ */
+
 void print_number(int n)
 {
-	int copy, nth, size = 1, ones = n % 10;
+	long len, res, i, temp, expo;
 
-	n /= 10;
-	copy = n;
-	if (ones < 0)
+	res = n;
+	expo = len =  1;
+/*Check negatives*/
+	if (res < 0)
 	{
-		ones *= -1, copy *= -1, n *= -1;
+		res *= -1;
 		_putchar('-');
 	}
-	if (copy > 0)
+
+/**/
+	temp = res;
+	while (temp >= 10)
 	{
-		while (copy / 10 != 0)
-		{
-			copy /= 10, size *= 10;
-		}
-		while (size > 0)
-		{
-			nth = n / size;
-			_putchar('0' + nth);
-			n -= nth * size;
-			size /= 10;
-		}
+		len++;
+		temp /= 10;
 	}
-	_putchar('0' + ones);
+
+/*Create Exponent*/
+	for (i = 1; i < len; i++)
+		expo *= 10;
+/*Main */
+	while (expo > 1)
+	{
+		_putchar((res / expo) % 10 + '0');
+		expo /= 10;
+	}
+	_putchar(res % 10 + '0');
 }
