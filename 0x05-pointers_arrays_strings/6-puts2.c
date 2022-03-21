@@ -16,10 +16,10 @@ void puts2(char *str)
 	while (*y != '\0')
 	{
 		y++;
-		len++
+		len++;
 	}
 	l = len - 1;
-	for (z = 0; z <= 1; z++)
+	for (z = 0; z <= l; z++)
 	{
 		if (z % 2 == 0)
 		{
