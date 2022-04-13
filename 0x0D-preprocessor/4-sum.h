@@ -1,4 +1,4 @@
-#ifndef __FOUR_SUM__
-#define __FOUR_SUM__
-#define SUM(x,y) (x+y)
+#ifndef __SUM__
+#define __SUM__
+#define SUM(x,y) ((x) + (y))
 #endif
